@@ -1,0 +1,17 @@
+.test {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+}
+button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.current {
+  border-bottom: 2px solid blue;
+  color: blue;
+}
