@@ -16,9 +16,8 @@ async function getTimezone() {
           }
 
           const result = (await response.json())
-          console.log('result is: ', JSON.stringify(result, null, 4));
 
-            return JSON.stringify(result);
+            return result;
     }
     catch(error){
         if (error instanceof Error){
@@ -31,12 +30,18 @@ async function getTimezone() {
 }
 
 const Form: React.FC = () => {
+    // let options: Array<string> = []
     let options: Array<string> = []
-
-    
-    getTimezone().then(value => options.push(value))
+    let test: Array<string> = []
+    getTimezone()
+    .then(value => {
+        value.map((timezone: string) => options.push(timezone))
+    })
     console.log(options);
     
+    
+    
+  
 
     return (
         <form action="" className="">
@@ -44,7 +49,11 @@ const Form: React.FC = () => {
             <div className="form-footer">
                 <textarea name="author" id="" cols={30} rows={2} placeholder="Автор"></textarea>
                 <select name="" id="">
-                    {options.map(timezone => <option>timezone</option>)}
+                    <option value={options[3]}>{options[3]}</option>
+                    <option>{options.length}</option>
+                    <option>{}</option>
+                    <option>{options[3]}</option>
+                    <option>{options[3]}</option>
                 </select>
             </div>
             <button>
